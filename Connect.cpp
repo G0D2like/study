@@ -6,7 +6,7 @@
 using namespace std;
 
 
-const int nConst = 100;
+const int nConst = 20000;
 int used[nConst];
 vector<int> edges[nConst];
 int DFSspec = 1;
@@ -26,19 +26,19 @@ void dfs(int Num)
 
 int main()
 {
-	//Чтение и вывод
+	//Г—ГІГҐГ­ГЁГҐ ГЁ ГўГ»ГўГ®Г¤
 	freopen("connect.in", "r", stdin);
 	freopen("connect.out", "w", stdout); 
 
-	//Блок 1
+	//ГЃГ«Г®ГЄ 1
 	bool MainCheck = false, HelpCheck = true, SecCheck;
-	int N, M; //N-кол-во вершин; M-кол-во ребер;
+	int N, M; //N-ГЄГ®Г«-ГўГ® ГўГҐГ°ГёГЁГ­; M-ГЄГ®Г«-ГўГ® Г°ГҐГЎГҐГ°;
 	cin >> N >> M;
 
-	//Чтение графа
+	//Г—ГІГҐГ­ГЁГҐ ГЈГ°Г ГґГ 
 	for (int i = 0; i < M; i++)
 	{
-		int l, j; //Вспомогательные переменные
+		int l, j; //Г‚Г±ГЇГ®Г¬Г®ГЈГ ГІГҐГ«ГјГ­Г»ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
 		cin >> l >> j;
 		l--;
 		j--;
@@ -46,13 +46,13 @@ int main()
 		edges[j].push_back(l);
 	};
 
-	//Поиск Комп.Связ
+	//ГЏГ®ГЁГ±ГЄ ГЉГ®Г¬ГЇ.Г‘ГўГїГ§
 	while (MainCheck == false)
 	{
 		dfs(Versh);
 		DFSspec++;
 		HelpCheck = true;
-		//Проверка на выполненость
+		//ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГўГ»ГЇГ®Г«Г­ГҐГ­Г®Г±ГІГј
 		for (int i = 0; i < N; i++)
 		{
 			if (used[i] == 0)
