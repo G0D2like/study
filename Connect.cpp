@@ -26,19 +26,19 @@ void dfs(int Num)
 
 int main()
 {
-	//×òåíèå è âûâîä
+	//Read the graph
 	freopen("connect.in", "r", stdin);
 	freopen("connect.out", "w", stdout); 
 
-	//Áëîê 1
+
 	bool MainCheck = false, HelpCheck = true, SecCheck;
-	int N, M; //N-êîë-âî âåðøèí; M-êîë-âî ðåáåð;
+	int N, M;
 	cin >> N >> M;
 
-	//×òåíèå ãðàôà
+	//Fill in vector
 	for (int i = 0; i < M; i++)
 	{
-		int l, j; //Âñïîìîãàòåëüíûå ïåðåìåííûå
+		int l, j;
 		cin >> l >> j;
 		l--;
 		j--;
@@ -46,13 +46,12 @@ int main()
 		edges[j].push_back(l);
 	};
 
-	//Ïîèñê Êîìï.Ñâÿç
+	//Search connectivity components
 	while (MainCheck == false)
 	{
 		dfs(Versh);
 		DFSspec++;
 		HelpCheck = true;
-		//Ïðîâåðêà íà âûïîëíåíîñòü
 		for (int i = 0; i < N; i++)
 		{
 			if (used[i] == 0)
