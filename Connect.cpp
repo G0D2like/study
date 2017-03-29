@@ -77,7 +77,7 @@ int main()
 			MainCheck = true;
 		};
 	};
-	DFSspec = DFSspec - 2;
+	DFSspec--;
 	cout << DFSspec << endl;
 	for (int i = 0; i < N; i++)
 	{
